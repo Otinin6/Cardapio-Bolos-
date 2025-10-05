@@ -72,7 +72,7 @@ bolo = st.selectbox("Opção", list(escolha.keys()))
 
 for nome_bolo, imagem_bolo in escolha.items():
     if imagem_bolo:
-        st.image(imagem_bolo, width=300)
+        st.image(f"cardapio-main/{imagem_bolo}", width=300)  # ← MUDANÇA AQUI
         st.markdown(
             f"<p style='text-align: center; font-size: 20px; color: black; font-weight: bold;'>{nome_bolo}</p>",
             unsafe_allow_html=True
