@@ -68,11 +68,11 @@ escolha = {
 }
 
 st.subheader("Escolha o que você tem interesse:")
-bolo = st.selectbox("Opção", list(escolha.keys()))
+item = st.selectbox("Opção", list(escolha.keys()))
 
 for nome_bolo, imagem_bolo in escolha.items():
     if imagem_bolo:
-        st.image(f"cardapio-main/{imagem_bolo}", width=300)  # ← MUDANÇA AQUI
+        st.image(f"cardapio-main/{imagem_bolo}", width=300)  
         st.markdown(
             f"<p style='text-align: center; font-size: 20px; color: black; font-weight: bold;'>{nome_bolo}</p>",
             unsafe_allow_html=True
@@ -85,9 +85,9 @@ if st.button("🍰 Gerar pedido no WhatsApp"):
     if not nome.strip():
         st.error("Por favor, preencha seu nome.")
     else:
-        mensagem = f"Olá! Me interessei em fazer o pedido de: {bolo}. Meu nome é {nome}."
+        mensagem = f"Olá! Meu nome é {nome} e Me interessei em fazer o pedido de: {item}."
         mensagem_codificada = urllib.parse.quote(mensagem)
-        numero = "5581985043578" 
+        numero = "5581989737758" 
         link = f"https://wa.me/{numero}?text={mensagem_codificada}"
 
         st.success("Pronto! Clique abaixo para enviar o pedido:")
